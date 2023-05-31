@@ -14,7 +14,7 @@ This will keep a record of all the functioning and usage of the extension.
 
 Personal Repo:
 
-<img title="Personal Repo" alt="Alt text" src="/Users/doomsday69/College/VSCodeExtension/lasteditor/image/Personal eg.png">
+![Alt text](/image/Personal%20eg.png)
 
 
 Public Repo 1:
