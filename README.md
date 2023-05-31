@@ -21,12 +21,12 @@ This is a basic VS Code extension, that will allow the users to view the usernam
 
 # Execution
 1. To add the extension to your editor and test it-
-- Save the files after coding.
+- Clone this repository to a specific location on your local machine.
 - Navigate to the root directory and run the commands-<br>*"npm run build"*<br>*"npm install --save-dev typescript"*<br>*"code ."*
 - After the last command, VS Code will open with the following extension installed.
 
 # Testing
 1. To test the extension, I firstly opened the very own files of this extension and saw myself as the user.
-2. Then I cloned a public github repo and tried to see it's authors. It worked and also showed me the when the last commit was made and by whom.
+2. Then I cloned a public github repo and tried to see it's authors. It worked and also showed me the time when the last commit was made and by whom.
 
 # THANK YOU!
