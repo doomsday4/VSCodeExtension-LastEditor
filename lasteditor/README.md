@@ -1,22 +1,37 @@
 # lasteditor README
 
 This is the README for our extension "lasteditor".
+This will keep a record of all the functioning and usage of the extension.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+1. The main feature of this extension is to display the name of the last editor of each line of a code.
+2. It uses the Git Blame command to read and extract content from the git database.
+> Note: For this approach, it is necessary to have the Git Blame extension installed in VS Code.<br>For a code which is locally placed on a machine, it will display the editor as *You* because obviously, it cannot trace who actually edited the code.
+3. Along with the name, we can also see the time when the edits were made and the name of the commit with which they were included. This will help in tracing the code better.
 
-For example if there is an image subfolder under your extension project workspace:
+<u>For example:</u> I've attached 3 screenshots, diplaying the names of the authors of the code.
 
-\!\[feature X\]\(images/feature-x.png\)
+Personal Repo:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+<img title="Personal Repo" alt="Alt text" src="/Users/doomsday69/College/VSCodeExtension/lasteditor/image/Personal eg.png">
+
+
+Public Repo 1:
+
+<img title="Personal Repo" alt="Alt text" src="/Users/doomsday69/College/VSCodeExtension/lasteditor/image/Public Repo eg1.png">
+
+Public Repo 2:
+
+<img title="Personal Repo" alt="Alt text" src="/Users/doomsday69/College/VSCodeExtension/lasteditor/image/Public Repo eg2.png">
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The major requirements are:
+1. Have the Git Blame extension installed in your VS Code.
+2. Have the npm package manager to build the extension and deploy it.
 
-## Extension Settings
+<!-- ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -25,13 +40,13 @@ For example:
 This extension contributes the following settings:
 
 * `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `myExtension.thing`: Set to `blah` to do something. -->
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Might not work if the appropriate extensions (Git Blame, Git) are not installed.
 
-## Release Notes
+<!-- ## Release Notes
 
 Users appreciate release notes as you update your extension.
 
@@ -47,25 +62,12 @@ Fixed issue #.
 
 Added features X, Y, and Z.
 
----
+--- -->
 
 ## Following extension guidelines
 
 Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
