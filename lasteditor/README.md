@@ -45,6 +45,10 @@ This extension contributes the following settings:
 ## Known Issues
 
 1. Might not work if the appropriate extensions (Git Blame, Git) are not installed.
+2. On executing the command "*code .*", if it doesn't recognise the command, we need to add it to the path from VS Code.
+ - Open VS Code and press *cmd/ctrl + shift + P*, this shall open the command search palette.
+ - Search for the shell command- *Install 'Code' command in PATH*
+ - This shall add the command to the path and now we can proceed.
 
 <!-- ## Release Notes
 
