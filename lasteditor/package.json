@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.78.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doomsday4/VSCodeExtension-LastEditor.git"
+  },
   "categories": [
     "Other"
   ],

@@ -1,37 +1,42 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deactivate = exports.activate = void 0;
-//importing the necessary modules
+exports.activate = void 0;
 const vscode = require("vscode");
-//the main function to display the name of the last editor
 function activate(context) {
-    let disposable = vscode.commands.registerCommand('extension.showLastEditor', () => {
-        const editor = vscode.window.activeTextEditor; // this part handles the text that is shown to us at each line
-        if (editor) {
-            const line = editor.selection.active.line;
-            const filePath = editor.document.uri.fsPath;
-            const escapedPath = filePath.includes(' ') || filePath.includes('\n')
-                ? `"${filePath.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`
-                : filePath;
-            //const  = editor.document.uri.fsPath;
-            // this command uses the git blame command to examine the content line by line and get the author name
-            vscode.commands.executeCommand('git.blame', { args: ['-L', `${line + 1},${line + 1}`, '--', escapedPath] })
-                .then(result => {
-                const blameInfo = result;
-                if (blameInfo.length > 0) {
-                    const lastEditAuthor = blameInfo[0].author;
-                    vscode.window.showInformationMessage(`Last editor at line ${line + 1}: ${lastEditAuthor}`);
+    let disposable = vscode.commands.registerCommand('extension.showLastEditor', async () => {
+        let outputChannel;
+        outputChannel = vscode.window.createOutputChannel('Last Editor');
+        const gitExtension = vscode.extensions.getExtension('vscode.git');
+        if (gitExtension) {
+            const git = gitExtension.exports.getAPI(1);
+            const repositories = git.repositories;
+            if (repositories.length > 0) {
+                const activeEditor = vscode.window.activeTextEditor;
+                if (activeEditor) {
+                    const filePath = activeEditor.document.uri.fsPath;
+                    const blameInfo = await repositories[0].blame(filePath);
+                    if (blameInfo && blameInfo.length > 0) {
+                        for (let i = 0; i < blameInfo.length; i++) {
+                            const line = i + 1; // Lines are 1-based, so increment the index by 1
+                            const lastEditAuthor = blameInfo[i].author.name;
+                            outputChannel.appendLine(`Last author at line ${line}: ${lastEditAuthor}`);
+                        }
+                    }
                 }
-            })
-                .then(undefined, error => {
-                console.error(error);
-            });
+                else {
+                    vscode.window.showWarningMessage('No active text editor found.');
+                }
+            }
+            else {
+                vscode.window.showWarningMessage('No Git repository found in the workspace.');
+            }
         }
+        else {
+            vscode.window.showWarningMessage('The Git extension is not installed.');
+        }
+        outputChannel.show();
     });
     context.subscriptions.push(disposable);
 }
 exports.activate = activate;
-// this method will deactivate the extension
-function deactivate() { }
-exports.deactivate = deactivate;
 //# sourceMappingURL=extension.js.map
