@@ -10,9 +10,13 @@ export function activate(context: vscode.ExtensionContext) {
         if (editor) {
             const line = editor.selection.active.line;
             const filePath = editor.document.uri.fsPath;
+            const escapedPath = filePath.includes(' ') || filePath.includes('\n')
+    ? `"${filePath.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`
+    : filePath;
+            //const  = editor.document.uri.fsPath;
 
             // this command uses the git blame command to examine the content line by line and get the author name
-            vscode.commands.executeCommand<BlameInfo[]>('git.blame', { args: ['-L', `${line + 1},${line + 1}`, '--', filePath] })
+            vscode.commands.executeCommand<BlameInfo[]>('git.blame', { args: ['-L', `${line + 1},${line + 1}`, '--', escapedPath] })
                 .then(result => {
                     const blameInfo = result;
                     if (blameInfo.length > 0) {

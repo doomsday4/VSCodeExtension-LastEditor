@@ -1,0 +1,39 @@
+{
+    "name": "LastEditor",
+    "displayName": "lasteditor",
+    "version": "1.0.0",
+    "publisher": "amankhilani",
+    "description": "Description of your extension",
+    "engines": {
+      "vscode": "^1.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/doomsday4/VSCodeExtension-LastEditor.git"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [
+      "onCommand:extension.myCommand"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "extension.myCommand",
+          "title": "My Extension Command"
+        }
+      ]
+    },
+    
+    "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+      "typescript": "^4.0.0"
+    }
+  }
+  
