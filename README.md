@@ -16,17 +16,14 @@ This is a basic VS Code extension, that will allow the users to view the usernam
 
 # Main Function
 1. Now edit the extension.ts file in the src directory and create the function to display the name of the author for each line of code.
-2. I've used the git interface approach (*make sure the git blame extension is installed for this*) for this. Here, we use the data stored in git about who committed a specific line of code along with how long ago the commit was made. 
-3. Edit the package.json file to add the respective devDependencies, commands and build scripts for execution.
+2. I've used the git interface approach, which basically makes use of the Git Blame Info for this. Here, we use the data stored in git about who committed a specific line of code. 
+3. Edit the package.json file to add the respective devDependencies, commands and build scripts for execution. Make sure to add the correct name of the command for activation of the extension and also the correct file path.
 
 # Execution
-1. To add the extension to your editor and test it-
-- Clone this repository to a specific location on your local machine.
-- Navigate to the root directory and run the commands-<br>*"npm run build"*<br>*"npm install --save-dev typescript"*<br>*"code ."*
-- After the last command, VS Code will open with the following extension installed.
+1. Install the VSIX file attached in the repository, directly into your VS Code Editor.
 
 # Testing
 1. To test the extension, I firstly opened the very own files of this extension and saw myself as the user.
-2. Then I cloned a public github repo and tried to see it's authors. It worked and also showed me the time when the last commit was made and by whom.
+2. Then I cloned a public github repo and tried to see it's authors.
 
 # THANK YOU!
