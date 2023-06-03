@@ -7,29 +7,23 @@ This will keep a record of all the functioning and usage of the extension.
 
 1. The main feature of this extension is to display the name of the last editor of each line of a code.
 2. It uses the Git Blame command to read and extract content from the git database.
-> Note: For this approach, it is necessary to have the Git Blame extension installed in VS Code.<br>For a code which is locally placed on a machine, it will display the editor as *You* because obviously, it cannot trace who actually edited the code.
-3. Along with the name, we can also see the time when the edits were made and the name of the commit with which they were included. This will help in tracing the code better.
+3. With the latest version, the name of the last editor of the selected line of code is displayed on the leftmost corner of the line, in red colour.
 
-<u>For example:</u> I've attached 3 screenshots, diplaying the names of the authors of the code.
+<u>For example:</u> I've attached 2 screenshots, diplaying the names of the authors of the code.
 
 Personal Repo:
 
-![Alt text](./image/Personal%20eg.png)
+![Alt text](./image/PersonalRepo.png)
 
 
-Public Repo 1:
+Public Repo:
 
-![Alt text](./image/Public%20Repo%20eg1.png)
-
-Public Repo 2:
-
-![Alt text](./image/Public%20Repo%20eg2.png)
+![Alt text](./image/PublicRepo.png)
 
 ## Requirements
 
 The major requirements are:
-1. Have the Git Blame extension installed in your VS Code.
-2. Have the npm package manager to build the extension and deploy it.
+1. Have the npm package manager to build the extension and deploy it.
 
 <!-- ## Extension Settings
 
@@ -41,14 +35,6 @@ This extension contributes the following settings:
 
 * `myExtension.enable`: Enable/disable this extension.
 * `myExtension.thing`: Set to `blah` to do something. -->
-
-## Known Issues
-
-1. Might not work if the appropriate extensions (Git Blame, Git) are not installed.
-2. On executing the command "*code .*", if it doesn't recognise the command, we need to add it to the path from VS Code.
- - Open VS Code and press *cmd/ctrl + shift + P*, this shall open the command search palette.
- - Search for the shell command- *Install 'Code' command in PATH*
- - This shall add the command to the path and now we can proceed.
 
 <!-- ## Release Notes
 
