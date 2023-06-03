@@ -21,6 +21,8 @@ This is a basic VS Code extension, that will allow the users to view the usernam
 
 # Execution
 1. Install the VSIX file attached in the repository, directly into your VS Code Editor.
+2. Select the line you want to know the last author of.
+3. Open the Command Palette (cmd+shift+P / ctrl+shift+P) and search for the Command- "Show Last Editor" and click it.
 
 # Testing
 1. To test the extension, I firstly opened the very own files of this extension and saw myself as the user.
